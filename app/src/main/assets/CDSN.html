@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>CDSN</title>
+    <style>
+        p{ text-indent:2em}
+    </style>
+</head>
+<body>
+<h3>涉及知识点</h3>
+<ul>
+    <li>xutils的使用</li>
+    <li>异步任务AsyncTask的使用</li>
+    <li>jsoup的使用</li>
+    <li>线程通信方式</li>
+    <li>WebView的使用</li>
+    <li>自定义控件</li>
+    <li>PopupWindow的使用</li>
+    <li>系统分享功能</li>
+</ul>
+<h3>功能</h3>
+
+<p>通过移动端app访问CSDN<a href="http://blog.csdn.net/">http://blog.csdn.net/</a>的移动开发模块，可自定义添加、置顶、删除博主，访问博主的博文列表及博文内容，实现浏览、收藏、分享的功能。 </p>
+
+<h3>实现</h3>
+<ul>
+    <li>博主列表
+        <ul>
+            <li>xutils中DbUtils的使用：通过注解的方式建表，需要注意的是存储的对象必须有id属性，或者通过@ID注解的属性。</li>
+            <li>通过DbUtils内置方法save、find、updata、delete一键增删查改，初始化添加50为最火的android博主。</li>
+            <li>添加博主时，使用异步任务的方式：
+                <ul>
+                    <li>重写doInBackground方法，通过HttpUrlCollection获取网页数据。</li>
+                    <li>重写onPostExecute方法，将得到的字符串数据返回。</li>
+                </ul>
+            </li>
+            <li>通过jsoup解析html数据：
+                <ul>
+                    <li>通过Jsoup.parse()方法通过返回的字符串数据得到Document对象</li>
+                    <li>然后遍历其中元素（标签），得到我们需要的数据</li>
+                </ul>
+            </li>
+            <li>线程通信方式
+                <ul>
+                    <li>Handler、Message、Looper、MessagQueue</li>
+                    <li>runOnUiThread(Runnable r)</li>
+                    <li>handler.post()</li>
+                </ul>
+            </li>
+            <li>自定义CircleImageView，重写onDraw方法，添加自定义属性，用来显示博主头像。</li>
+            <li>自定义Dialog，更加符合用户审美观。</li>
+        </ul>
+    </li>
+
+    <li>博文列表
+        <ul>
+            <li>通过Intent取到传递过来的博主属性。</li>
+            <li>通过DbUtils以博主的id作为表名建每个博主对应的数据表。</li>
+            <li>通过异步任务请求网页数据。</li>
+            <li>通过Jsoup解析获得的html的字符串数据，得到我们想要的属性。</li>
+            <li>分类浏览：通过点击事件弹出一个PopupWindow，在PopupWindow中加载类别名称，并添加点击事件。</li>
+            <li>使用xListView分页显示获得的数据列表，每页显示20个，并设置上拉加载下一页数据。</li>
+        </ul>
+    </li>
+
+    <li>博文内容
+        <ul>
+            <li>通过Intent取到传递过来的博文信息。</li>
+            <li>通过异步任务请求网页数据。</li>
+            <li>通过Jsoup解析获得的html的字符串数据。</li>
+            <li>通过WebView加载网页数据。</li>
+            <li>可以点击收藏按钮，将博客添加到收藏列表，或取消收藏。</li>
+            <li>可以点击分享按钮，调用系统的分享服务。</li>
+        </ul>
+    </li>
+
+    <li>收藏列表
+        <ul>
+            <li>基本同博文列表界面，更改博文对象属性isCollect即可。</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

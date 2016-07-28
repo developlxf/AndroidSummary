@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_note_edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0099FF"
+        android:elevation="10dp"
+        android:title="编辑"
+        android:logo="@drawable/icon_note"/>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="#F0E68C" >
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/TextInputLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入标题...">
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:background="#7FFFD4"
+                android:ems="10"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#7FFFD4"
+            android:layout_below="@+id/TextInputLayout1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="80dp"
+            android:gravity="top"
+            android:hint="请输入内容..."
+            />
+
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#ADFF2F"
+            android:layout_marginBottom="5dp"
+            android:text="保存" />
+
+    </RelativeLayout>
+
+</LinearLayout>

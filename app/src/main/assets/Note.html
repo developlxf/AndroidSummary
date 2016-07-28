@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Note</title>
+  <style >
+	p{ text-indent:2em}
+	</style>
+ </head>
+ <body>
+<h3>涉及知识点</h3>
+<ul>
+<li>Toolbar+SearchView</li>
+<li>SQLite</li>
+<li>自定义控件</li>
+<li>TextInputLayout</li>
+<li>其他常用控件</li>
+</ul>
+<h3>功能</h3>
+<p>可以写便签保存到本地数据库，通过ListView列表显示标题和创建时间，可以向左滑动删除某个条目。 </p>
+<h3>实现</h3>
+<ul>
+<li>Sqlite<p>创建数据库帮助类SQLiteopenHelper的子类，建表并增加增删改查的基本方法，在保存便签时将便签的标题、内容、时间封装成对象保存到数据库。 </p></li>
+<li>自定义ListView<p>自定义类继承与ListView，重写dispathTouchEvent和onTouchEvent方法，在dispathTouchEvent方法中判断是否响应当前的滑动，通过pointToPosition获得当前的item位置及当前点击的item，在onTouchEvent通过getLocationOnScreen获得当前item在屏幕上的位置，如果响应滑动则根据此位置绘制一个popupWindow，并为它设置点击事件的回调。</p></li>
+<li>TextInputLayout<p>是Android M的一个新控件，一般里面会放置一个EditView，用来解决EditView在获得焦点编辑时hint属性提示语会消失的问题，可以时刻提醒用户当前输入的是什么内容。它不仅能让EditView的提示语显示在EditView之上，也可以把错误信息显示在EditView之下。</p></li>
+ </ul>
+</body>
+</html>

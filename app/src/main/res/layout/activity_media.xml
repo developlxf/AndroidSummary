@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="top"
+    android:background="@drawable/media_bg"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/linearlayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/linearlayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="60dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true"
+                android:text="无歌曲播放"
+                android:textColor="#ddffffff"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/music_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/music_name"
+                android:layout_marginLeft="20dip"
+                android:layout_marginTop="5dip"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="#66ceedf9"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/music_number"
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="33dip"
+                android:gravity="center_horizontal"
+                android:text="0/0"
+                android:textColor="#bbf3731e"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/relativelayout2"
+            android:layout_below="@id/linearlayout2" >
+
+            <ListView
+                android:id="@+id/media_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:layout_alignParentBottom="true" >
+
+            <LinearLayout
+                android:id="@+id/below_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/below_line2"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/iv_select_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/media_bg_select" />
+
+                <ImageView
+                    android:id="@+id/iv_select_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/media_bg_select" />
+
+                <ImageView
+                    android:id="@+id/iv_select_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/media_bg_select" />
+
+                <ImageView
+                    android:id="@+id/iv_select_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/media_bg_select" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/below_line2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/below_line3"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/time_tv1"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text=" 00:00 "
+                    android:textColor="#bb7af9fe"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/player_seekbar"
+                    android:layout_width="220dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/play_progress_background"
+                    android:max="0"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/seekbar_style" />
+
+                <TextView
+                    android:id="@+id/time_tv2"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text=" 00:00 "
+                    android:textColor="#bb7af9fe"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/below_line3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dip" >
+
+                <ImageButton
+                    android:id="@+id/ib1"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="#00000000"
+                    android:src="@drawable/bar_pre" />
+
+                <ImageButton
+                    android:id="@+id/ib2"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="30dip"
+                    android:background="@drawable/bar_play" />
+
+                <ImageButton
+                    android:id="@+id/ib3"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="30dip"
+                    android:background="#00000000"
+                    android:src="@drawable/bar_next" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

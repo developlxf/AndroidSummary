@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>MainUI</title>
+    <style>
+        p{ text-indent:2em}
+    </style>
+</head>
+<body>
+<h3>实现</h3>
+
+<p>(1)Toolbar+DrawerLayout+ActionBarDra werToggle</p>
+<ul>
+    <li>Toolbar
+        <ul>
+            <li>一般用来代替ActionBar，可定义性更强。先隐藏原来的ActionBar（可通过代码和theme两种方式），
+                再通过setSupportActionBar(toolbar)来使用Toolbar代替ActionBar。
+            </li>
+            <li>也可单独作为一个View来使用，Toolbar本身是继承于ViewGroup的。</li>
+            <li>此处的search图标通过menu.xml文件添加，通过actionViewClass属性使其关联一个控件
+                （此处为SearchVi ew，使用方法不再赘述）
+            </li>
+        </ul>
+    </li>
+    <li>DrawerLayout
+        <p>最少包含两项子布局。</p>
+        <ul>
+            <li>第一项为主内容布局，设置铺满容器，放置我们要显示的内容</li>
+            <li>第二项为抽屉布局，一般用来放置侧滑菜单栏，需设置Gravity为left或start。此处用的是NavigationView，
+                它拥有显示头部的布局和用于建立导向选项的菜单，设置完后直接添加点击事件即可。
+            </li>
+        </ul>
+    </li>
+    <li>ActionBarDrawerToggle
+        <p>一般和DrawerLayout搭配使用，符合Android design规范。它本身实现了DrawerLayout.DrawerListener接口，通过
+        <ul>
+            <li>drawer.setDrawerLinstener(toggle);</li>
+            <li>toggle.syncState();</li>
+        </ul>
+
+
+        与DrawerLayout关联即可控制DrawerLayout的打开和关闭。
+        </p>
+    </li>
+</ul>
+<p>(2)TabLayout+ViewPager+Fragment</p>
+<p>TabLayout是Android Support Design库中新推出的控件之一，官方给出的Demo就是如何与ViewPager进行联动：</p>
+<ul>
+    <li>通过setupWithViewPager关联ViewPager;</li>
+    <li>通过setOnTabSelectedListener设置一个监听器来响应选项卡的选择状态;</li>
+    <li>通过setTabsFromPagerAdapter来使用PagerAdapter的page title</li>
+    <li>通过TabLayout.TabLayoutOnPageChan geListener来联动滑动</li>
+</ul>
+</body>
+</html>

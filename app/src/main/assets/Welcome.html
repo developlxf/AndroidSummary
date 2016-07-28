@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Welcome</title>
+    <style >
+        p{ text-indent:2em}
+    </style>
+</head>
+<body>
+<h3>涉及知识点</h3>
+<ul>
+    <li>自定义动画</li>
+    <li>Fragment+ViewPager</li>
+    <li>Touch监听</li>
+</ul>
+<h3>功能</h3>
+<p>滑动界面进行信息切换，滑动的过程中有界面渐隐和平移的动画效果，滑到最后一个界面，再向左滑动则进入主界面。
+    也可以直接点击界面右下角的Skip按键跳转到主界面。</p>
+<h3>实现</h3>
+<ul>
+    <li>滑动效果<p>通过ViewPager+Fragment实现。</p></li>
+    <li>动画效果<p>通过setPageTransformer方法自定义ViewPager的切换动画:为布局中的每个图片分别设置自定义的补间
+        动画，达到此效果（使用到的第三方jar包： nineoldandroids动画库）。</p></li>
+    <li>最后一页滑入主界面<p>为ViewPager设置onTouch事件监听，当前显示为最后一页时，判断滑动方向和距离，符合需
+        求后跳转到主界面。</p></li>
+</ul>
+</body>
+</html>

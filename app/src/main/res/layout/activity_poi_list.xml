@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffff0" >
+
+    <RelativeLayout
+        android:id="@+id/rl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#0099FF" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="主题"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_poi_show"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:gravity="center"
+            android:text="地图"
+            android:textColor="#ff6666" />
+    </RelativeLayout>
+
+    <com.example.androidsummary.widget.XListView
+        android:id="@+id/xlv_poi_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title_bar"
+        android:layout_margin="5dp"
+        android:divider="@null"
+        android:visibility="visible" />
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bd_mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title_bar"
+        android:clickable="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

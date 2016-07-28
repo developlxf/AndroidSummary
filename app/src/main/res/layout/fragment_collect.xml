@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#79FFCC"
+    tools:context="com.example.androidsummary.fragment.CollectFragment"
+    android:orientation="vertical">
+
+    <com.example.androidsummary.widget.XListView
+        android:id="@+id/xlistview_collectblog"
+        android:layout_width="match_parent"
+        android:divider="#000000"
+        android:dividerHeight="0.5dp"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

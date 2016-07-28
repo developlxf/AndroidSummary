@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_csdn"
+        android:icon="@drawable/ic_action_collection"
+        android:title="CDSN" />
+
+    <item android:title="开心每一天">
+        <menu android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="照片墙" />
+            <item
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="音  乐" />
+            <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/menu_note_icon"
+                android:title="记事本" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="百度地图" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_action_copy"
+                android:title="简介" />
+        </menu>
+
+    </item>
+
+</menu>

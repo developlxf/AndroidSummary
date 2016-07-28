@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Map</title>
+    <style>
+        p{ text-indent:2em}
+    </style>
+</head>
+<body>
+<h3>涉及第三方jar包</h3>
+<ul>
+    <li>百度地图SDK</li>
+    <li>定位SDK</li>
+</ul>
+<h3>功能</h3>
+<ul>
+    <li>地图显示</li>
+    <li>地图定位</li>
+    <li>位置搜索</li>
+    <li>附近搜索</li>
+    <li>路线规划</li>
+</ul>
+<h3>实现</h3>
+<ul>
+    <li>地图显示<p>百度开发者平台下载百度地图sdk，为自己的项目申请AK，在清单文件中配置权限和开发密钥，
+        xml文件中添加地图控件MapView，在应用程序创建时初始化SDK引用的Context全局变量
+        SDKInitializer.initialize(getApplicationCon text())，
+        在地图Activity管理地图的生命周期，与Activity的onResume、onPause、onDestory三个生命周期同步。</p></li>
+    <li>地图定位<p>清单文件中配置定位所需的服务，设置定位模式（NORAL、COMPASS、FOLLOWING），通过地图
+        对象开启定位图层，通过LocationClient进行定位初始化。</p></li>
+    <li>位置搜索<p>通过Geocoder可以在街道地址和经纬度地图坐标之间进行转换，它提供了两种地理编码功能的访问：
+    </p>
+
+        <p>Forward Geocoding：前向地理编码，查找某个地址的经纬度
+        </p>
+
+        <p> Reverse Geocoding:反向地理编码，查找一个给定的经纬度所对应的街道地址。
+        </p></li>
+    <li>附近搜索<p>通过PoiSearch的setOnGetPoiSear chResultListener和searchearBy方法进行附
+        近的兴趣点搜索。此处的地图和列表切换，其实就是两个控件的显示和隐藏。</p></li>
+    <li>路线规划<p>
+        通过RoutePlanSearch的setOnGetRoutePlanResultListener监听搜索的结果，重写其中的onGetWalkingRouteResult、
+        onGetTransitRouteResult、onGetDrivingRouteResult三个方法来获得步行、公交、自驾三种路线规划。可通过
+        继承覆盖物类来自定义地图上显示的覆盖物。</p></li>
+</ul>
+</body>
+</html>

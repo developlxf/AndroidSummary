@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Photo</title>
+    <style >
+        p{ text-indent:2em}
+    </style>
+</head>
+<body>
+<h3>涉及知识点</h3>
+<ul>
+    <li>Volley+LruCache+DiskLruCache</li>
+    <li>RecyclerView</li>
+    <li>SwipeRefreshLayout</li>
+    <li>多点触碰</li>
+</ul>
+<h3>功能</h3>
+<p>按瀑布流布局显示大量的网络高清图片，解决OOM异常，尽可能的进行优化和减少流量，改进用户体验。</p>
+<h3>实现</h3>
+<ul>
+    <li>Volley+LruCache+DiskLruCache<p>加载大量网络图片的三级缓存，实现逻辑为：第一次加载时访问网络，同时将数据以键值对的方式放入内存缓存和磁盘缓存（图片的url是唯一的，可以用它作为key），之后在访问时优先访问内存缓存，没有则访问磁盘缓存，都没有再访问网络进行加载，可以大大减少加载速度，并减少流量耗费，提升用户体验。
+    </p><p>Cache保存一个强引用（有引用变量指向时永远不会被垃圾回收）来限制内容数量，每当Item被访问时，此Item会移动到队列的头部。当cache已满的时候再加入新的item时，在队列尾部的item会被回收。</p>
+    </li>
+    <li>RecyclerView<p>可以在有限的窗口中展示大量的数据集，类似于ListView、GridView，但是它比ListView、GridView更加的灵活，优化性能更好，可定制性更强，可以通过设置它提供的不同LayoutManager、ItemDecoration、ItemAnimator实现各种炫酷的效果。</p></li>
+    <li>SipeRefreshLayout<p>Google官方自己推出的一个下拉刷新控件，该控件只接受一个子控件，即要刷新的那个控件，我们此处将RecyclerView当成子控件放入其中，实现RecyclerView的下拉刷新。通过setColorSchemeResources()设置进度条颜色，setOnRefreshListener设置刷新事件监听。</p></li>
+    <li>多点触碰<p>在控件的onTouch事件中，可以用event.getAction()判断单点触碰，用ev.getAction&MotionEvent.ACTION_MASK可以判断多点触碰。</p></li>
+</ul>
+</body>
+</html>

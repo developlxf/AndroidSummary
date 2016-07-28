@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffff0"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/searchbackgroung"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et_poi_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:layout_weight="4"
+            android:clickable="true"
+            android:drawableLeft="@drawable/search_icon"
+            android:hint="搜索" />
+
+        <Button
+            android:id="@+id/btn_poi_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#fffff0"
+            android:text="搜索" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gv_pois"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:numColumns="3" >
+    </GridView>
+
+</LinearLayout>

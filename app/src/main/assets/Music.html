@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Music</title>
+    <style >
+        p{ text-indent:2em}
+    </style>
+</head>
+<body>
+<h3>涉及知识点</h3>
+<ul>
+    <li>Service</li>
+    <li>ContentProvider</li>
+    <li>MediaPlayer</li>
+    <li>补间动画</li>
+    <li>其他常用控件</li>
+</ul>
+<h3>功能</h3>
+<p>查找本地的所有音频，并以ListView列表的形式显示出来，点击列表进行音乐的播放，可以设置音乐的上一曲、下一曲、暂停及开始，音乐播放过程中退出界面音乐不会停止。 </p>
+<h3>实现</h3>
+<ul>
+    <li>音乐查找<p>通过ContentResolve来访问系统存放media的数据库（MediaStore.Audio包下的Media.EXTERNAL_CONTENT_URI），并查询出其中所有的音乐，通过ListView展现出来。</p></li>
+    <li>音乐播放<p>创建Service，在Service中通过MediaPlayer进行后台音乐的播放，在Activity中设置ListView条目点击事件和按键的监听，点击时通过startService启动服务，
+        并传递一个flag参数，因Service的onStartCommand方法可以无限调用，Service通过得到的flag参数来进行不同的操作。</p></li>
+    <li>曲名动画<p>歌曲名字通过TextView显示，通过setAnimation为文本设置一个显示动画。</p></li>
+</ul>
+</body>
+</html>
